@@ -66,8 +66,6 @@ module Papercrop
 
         box << @template.content_tag(:div, crop_image, :id => "#{attachment}_cropbox")
       end
-    rescue => error
-      Rails.logger.error error.backtrace.join("\n")
     end
   end
 end
