@@ -1,22 +1,22 @@
 
 Gem::Specification.new do |s|
   s.name          = 'papercrop'
-  s.version       = '0.3.0'
-  s.date          = '2015-09-23'
+  s.version       = '1.0.0'
+  s.date          = '2016-08-25'
   s.summary       = "Paperclip extension for cropping images"
   s.description   = "An easy extension for Paperclip to crop your image uploads using jCrop"
   s.license       = 'MIT'
-  s.authors       = ["Ruben Santamaria"]
-  s.email         = 'rsantamaria.dev@gmail.com'
-  s.homepage      = 'https://github.com/rsantamaria/papercrop'
+  s.authors       = ["Sergi Hernando"]
+  s.email         = 'sergi.hernando@speedjab.com'
+  s.homepage      = 'https://github.com/ajoman/papercrop'
 
   s.files         = Dir.glob("{lib,vendor}/**/*") + %w(README.md Appraisals)
   s.test_files    = Dir.glob("{spec}/**/*")
   s.require_paths = ["lib"]
 
-  s.add_dependency "rails", ">= 3.1"
+  s.add_dependency "rails"
   s.add_dependency "jquery-rails"
-  s.add_dependency "paperclip", ">= 3.4"
+  s.add_dependency "paperclip"
 
   s.add_development_dependency "rspec-rails", "~> 2.0"
   s.add_development_dependency "capybara", ">= 1.1.1"

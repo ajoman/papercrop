@@ -40,7 +40,7 @@ module Papercrop
     #   cropbox :avatar, :width => 650
     #
     # You can override the aspect ratio used by Jcrop, and even unlock it by setting :aspect to a new value or false
-    # 
+    #
     #   cropbox :avatar, :width => 650, :aspect => false
     #
     # @param attachment [Symbol] attachment name
@@ -57,7 +57,7 @@ module Papercrop
         box << self.hidden_field(:"#{attachment}_original_h", :value => original_height)
         box << self.hidden_field(:"#{attachment}_box_w",      :value => box_width)
         box << self.hidden_field(:"#{attachment}_aspect",     :value => aspect, :id => "#{attachment}_aspect")
-        
+
         for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] do
           box << self.hidden_field(:"#{attachment}_#{attribute}", :id => "#{attachment}_#{attribute}")
         end
@@ -66,6 +66,8 @@ module Papercrop
 
         box << @template.content_tag(:div, crop_image, :id => "#{attachment}_cropbox")
       end
+    rescue => error
+      Rails.logger.error error.backtrace.join("\n")
     end
   end
 end
